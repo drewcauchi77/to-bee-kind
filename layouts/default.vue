@@ -7,23 +7,16 @@
 </template>
 
 <script>
-export default {
-    name: 'App',
-    created() {
-        this.fetchCategories();
-        this.fetchPosts();
-    },
-    methods: {
-        async fetchCategories() {
-            const categories = await this.$axios.$get(`${this.$axios.defaults.baseURL}/categories`);
-            this.$store.commit('categories/add', categories);
+    export default {
+        name: 'App',
+        async fetch() {
+            const categories = await this.$axios.get(`${this.$axios.defaults.baseURL}/categories`);
+            this.$store.commit('addCategories', categories.data);
+            
+            const posts = await this.$axios.get(`${this.$axios.defaults.baseURL}/posts`);
+            this.$store.commit('addPosts', posts.data);
         },
-        async fetchPosts() {
-            const posts = await this.$axios.$get(`${this.$axios.defaults.baseURL}/posts`);
-            this.$store.commit('posts/add', posts);
-        },
-    },
-}
+    }
 </script>
 
 <style>

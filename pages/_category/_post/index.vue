@@ -1,5 +1,5 @@
 <template>
-    <div v-if="postsObject && post">
+    <div>
         <nuxt-link to="/">HOME</nuxt-link>
         POST
         {{post[0].title.rendered}}
@@ -10,7 +10,7 @@
 export default {
     name: 'Post',
     computed: {
-        postsObject() { return this.$store.state.posts.postsObject; },
+        postsObject() { return this.$store.state.postsObject; },
         post() { return this.postsObject.filter(post => post.slug == this.$route.params.post); }
     },
 }
