@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300&family=Raleway&display=swap');
+
+body, h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+}
+
+*, body, html{
+    font-family: 'Frank Ruhl Libre', serif;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+.content-container {
+    padding: 0 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}

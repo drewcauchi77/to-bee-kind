@@ -1,8 +1,10 @@
 <template>
     <main>
-        <div>header</div>
-        <nuxt />
-        <div>Footer</div>
+        <Header />
+        <div id="content" class="content-container">
+            <nuxt />
+        </div>
+        <Footer />
     </main>
 </template>
 
@@ -19,6 +21,8 @@
     }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+#content {
+    padding-top: 80px;
+}
 </style>
