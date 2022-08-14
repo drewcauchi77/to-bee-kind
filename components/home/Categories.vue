@@ -31,12 +31,12 @@ export default {
     }
     .category-list {
         grid-gap: 35px;
-        display: flex;
-        flex-direction: row;
+        display: grid;
         align-items: center;
-        flex-wrap: wrap;
+        grid-template-rows: repeat(3, 250px);
         .single-category {
-            height: 300px;
+            height: 100%;
+            width: 100%;
             max-width: 370px;
             flex-grow: 1;
             display: block;
@@ -60,7 +60,7 @@ export default {
                     right: 0;
                     margin: 20px;
                     border: 1px solid #000;
-                    background: rgba(255, 255, 255, 0.2);
+                    background: rgba(255, 255, 255, 0.25);
                     border-radius: 6px;
                     transition: 0.3s all;
                     h3 {
@@ -83,8 +83,37 @@ export default {
                 transform: translateY(-2%);
                 a {
                     .title {
-                        background: rgba(255, 255, 255, 0.5);
+                        background: rgba(255, 255, 255, 0.6);
                     }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 690px) {   
+    .categories {
+        .category-list {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            .single-category {
+                &:nth-child(3) {
+                    grid-column: 1/3;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 820px) {   
+    .categories {
+        .category-list {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 340px);
+            .single-category {
+                height: 320px;
+                &:nth-child(3) {
+                    grid-column: unset;
                 }
             }
         }
